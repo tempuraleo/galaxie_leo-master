@@ -6,46 +6,42 @@
 
     <a-scene>
 
+<script>
 
-  <script>
+var scene = document.querySelector('a-scene');
 
-    if (scene.hasLoaded) {
-      run();
-    } else {
-      scene.addEventListener('loaded', run);
-    }
+  if (scene.hasLoaded) {
+    run();
+  } else {
+    scene.addEventListener('loaded', run);
+  }
 
-
-var entier = entierAleatoire(1, 10);
 
 function entierAleatoire(min, max)
 {
 return Math.floor(Math.random() * (max - min + 1)) + min;}
 
+var entier = entierAleatoire(1, 10);
+
 function run () {
-var entity = scene.querySelector('a-box');
-entity.setAttribute('rotation', 'x', entier);
+var entity = scene.querySelector('a-plane');
 entity.setAttribute('position', 'x', entier);
 entity.setAttribute('position', 'y', entier);
 entity.setAttribute('position', 'z', entier);
 }
-
-
-
 
 </script>
 
       <a-assets>
           <a-asset-item id="tree1" src="models/arbol1/scene.gltf"></a-asset-item>
           <a-asset-item id="tree2" src="models/arbol2/scene.gltf"></a-asset-item>
+
           <a-image id="symbole3D" src="models/symbole.glb">
       </a-assets>
-<a-box color='grey'></a-box>
 
       <a-plane color='grey'
                static-body
                rotation="-90 0 0" width="100" height="100"></a-plane>
-
 
       <a-entity gltf-model="#symbole3D" position="entier entier entier" rotation="0 -90 0" ></a-entity>
       <a-entity gltf-model="#symbole3D" position="0 0 -1" rotation="0 -90 0" ></a-entity>
