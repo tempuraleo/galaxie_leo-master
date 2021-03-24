@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
   </head>
   <body>
 
@@ -8,11 +9,6 @@
 
 <script>
 
-      function entierAleatoire(min, max)
-{
- return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-var entier = entierAleatoire(1, 10);
 </script>
 
       <a-assets>
@@ -34,10 +30,11 @@ var entier = entierAleatoire(1, 10);
 
 
 
-      <a-entity gltf-model="#symbole3D" position="0 0 -1" rotation="0 -90 0" ></a-entity>
-      <a-entity gltf-model="#tree2" position="38 8.5 -10" shadow="cast:true"></a-entity>
-      <a-entity gltf-model="#tree1" position="33 5.5 -10" shadow="cast:true"></a-entity>
-      <a-entity gltf-model="#tree1" position="33 5.5 -30" shadow="cast:true"></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
 
     </a-scene>
 
