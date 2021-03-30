@@ -13,22 +13,32 @@
 </script>
 
       <a-assets>
-          <a-image id="symbole3D" src="models/symbole.glb">
+          <a-asset-item id="symbole3D" src="models/homme.glb"></a-asset-item>
                   <a-mixin id="random-2" random-position></a-mixin>
                   <a-mixin id="test1"
          gltf-model="#symbole3D"
-         random-position="min: -10 0 -10; max: 10 0 10"
-         rotation="0 -90 0"></a-mixin>
+         random-position="min: -1 0 -2.6; max: 3 0 0.4"
+         scale="1.2 1.2 1.2"
+         rotation="0 0 0"></a-mixin>
+        <a-asset-item id="maison" src="models/maison.glb"></a-asset-item>
 
       </a-assets>
 
 
       <a-plane color='grey'
                static-body
-               rotation="-90 0 0" width="100" height="100"></a-plane>
+               rotation="-90 0 0" width="10" height="10"
+               position="0 0 0"></a-plane>
 
+               <a-plane color='blue'
+                        static-body
+                        rotation="-90 0 0" width="10" height="10"
+                        position="0 10 0"></a-plane>
+
+
+  <a-entity gltf-model="#maison" position="-1.6 -0.5 -1" rotation="0 0 0"  scale="1.2 1.6 1.2"></a-entity>
 <!--<a-entity entity-generator="mixin: random-2 symbole3D; num: 500"></a-entity>-->
-<a-entity entity-generator="mixin: test1; num: 50" animation="delay:1000"></a-entity>
+<a-entity entity-generator="mixin: test1; num: 20" delay="1000"></a-entity>
 <!--<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
 <a-entity mixin="num:500" gltf-model="#symbole3D" rotation="0 -90 0" ></a-entity>
 <a-entity entgltf-model="#symbole3D" random-position="min: -60 -60 -80; max: 60 60 40" rotation="0 -90 0" ></a-entity>
@@ -36,6 +46,8 @@
 <a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
 <a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>-->
 
+<a-entity camera look-controls position="0 1.65 -1"  >
+</a-entity>
 
     </a-scene>
 
