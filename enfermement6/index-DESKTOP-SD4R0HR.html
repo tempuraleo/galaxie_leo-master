@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-entity-generator-component@3.0.1/dist/aframe-entity-generator-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
+  </head>
+  <body>
+
+    <a-scene>
+
+<script>
+
+</script>
+
+      <a-assets>
+          <a-image id="symbole3D" src="models/symbole.glb">
+                  <a-mixin id="random-2" random-position></a-mixin>
+                  <a-mixin id="test1"
+         gltf-model="#symbole3D"
+         random-position="min: -60 -60 -80; max: 60 60 40"
+         rotation="0 -90 0"></a-mixin>
+
+      </a-assets>
+
+
+      <a-plane color='grey'
+               static-body
+               rotation="-90 0 0" width="100" height="100"></a-plane>
+
+<!--<a-entity entity-generator="mixin: random-2 symbole3D; num: 500"></a-entity>-->
+<a-entity entity-generator="mixin: test1; num: 500"></a-entity>
+<!--<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
+<a-entity mixin="num:500" gltf-model="#symbole3D" rotation="0 -90 0" ></a-entity>
+<a-entity entgltf-model="#symbole3D" random-position="min: -60 -60 -80; max: 60 60 40" rotation="0 -90 0" ></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>-->
+
+
+    </a-scene>
+
+  </body>
+</html>
