@@ -1,0 +1,58 @@
+
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-entity-generator-component@3.0.1/dist/aframe-entity-generator-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
+  </head>
+  <body>
+
+    <a-scene>
+
+<script>
+
+</script>
+
+      <a-assets>
+          <a-asset-item id="symbole3D" src="models/cecile1.glb"></a-asset-item>
+                  <a-mixin id="random-2" random-position></a-mixin>
+                  <a-mixin id="test1"
+         gltf-model="#symbole3D"
+         random-position="min: -0.8 0 -1.9; max: -0.7 0 1.8"
+         scale="1.2 1.2 1.2"
+         random-rotation="min: 0 -180 0; max: 0 180 0"
+         ></a-mixin>
+        <a-asset-item id="maison" src="models/cellule1.glb"></a-asset-item>
+
+      </a-assets>
+
+
+      <a-plane color='grey'
+               static-body
+               rotation="-90 0 0" width="10" height="10"
+               position="0 0 0"></a-plane>
+
+               <a-plane color='blue'
+                        static-body
+                        rotation="-90 0 0" width="10" height="10"
+                        position="0 3.1 0"></a-plane>
+
+
+  <!--<a-entity gltf-model="#maison" position="-1.6 -0.5 -1" rotation="0 0 0"  scale="1.2 1.6 1.2"></a-entity>-->
+    <a-entity gltf-model="#maison" position="0 0 0" rotation="0 90 0"  scale="0.4 0.4 0.4"></a-entity>
+<!--<a-entity entity-generator="mixin: random-2 symbole3D; num: 500"></a-entity>-->
+<a-entity entity-generator="mixin: test1; num: 30" delay="1000"></a-entity>
+<!--<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
+<a-entity mixin="num:500" gltf-model="#symbole3D" rotation="0 -90 0" ></a-entity>
+<a-entity entgltf-model="#symbole3D" random-position="min: -60 -60 -80; max: 60 60 40" rotation="0 -90 0" ></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>
+<a-entity gltf-model="#symbole3D" random-position rotation="0 -90 0" ></a-entity>-->
+
+<!--<a-entity camera look-controls position="0 1.65 0"  >-->
+</a-entity>
+
+    </a-scene>
+
+  </body>
+</html>
