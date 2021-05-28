@@ -17,7 +17,7 @@
 
 
       <a-entity geometry="primitive: box" material="color: blue"
-                position="-10 0 0" sound="src: #son ; autoplay: true"></a-entity>
+                position="-50 0 0" sound="src: #son ; autoplay: true ; maxDistance : 15 ; volume : 0.5"></a-entity>
 
     <!--  <a-entity light="type: ambient; color: #CCC"></a-entity>-->
 
@@ -51,6 +51,41 @@
 </a-entity>
 
     </a-scene>
+
+    <button id="bouton" style="position: absolute; left: 20px; bottom: 20px;">EN AVANT LA MUSIQUE!</button>
+
+    <script>
+        var b = document.querySelector('#bouton');
+        var son_zorba = document.querySelector('#son');
+
+        var AudioContext = window.AudioContext || window.webkitAudioContext;
+        var contexteAudio = new AudioContext;
+
+        unlockAudioIOS(contexteAudio); // ok pour context = AudioContext;
+
+    function resumeAudio() {
+      console.log(contexteAudio.state);
+
+      if (contexteAudio.state == "suspended") {
+        contexteAudio.resume();
+        console.log('Playback resumed successfully');
+        son_zorba.play();
+        b.innerHTML = "STOP";
+        console.log("STOP CONSOLE");
+      } else {
+        contexteAudio.suspend();
+        console.log('Playback paused successfully');
+        son_zorba.pause();
+        b.innerHTML = "PLAY";
+        console.log("PLAY CONSOLE");
+      }
+      //document.removeEventListener("click", resumeAudio);
+    }
+
+   b.onclick = resumeAudio;
+   </script>
+
+
 
   </body>
 </html>
